@@ -42,7 +42,7 @@ void heap_push(Heap* pq, void* data, int priority)
   pq->heapArray[indice].priority = priority;
   int padre;
   padre = (indice-1)/2;
-  while(padre!=0)
+  while(1)
   {
     if(pq->heapArray[indice].priority > pq->heapArray[padre].priority)
     {
@@ -56,6 +56,7 @@ void heap_push(Heap* pq, void* data, int priority)
       pq->size = pq->size +1;
       padre=(padre-1)/2;
     }
+    else break;
   }
 }
 
