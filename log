@@ -155,3 +155,9 @@ heap.c:49:13: error: unused variable ‘auxPQ’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 9819b28
+Fri May  6 15:59:52 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+abc706d
