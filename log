@@ -135,3 +135,23 @@ heap.c:50:12: error: ‘auxPQ’ may be used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 8d590b4
+Fri May  6 15:59:43 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+heap.c: In function ‘heap_push’:
+heap.c:49:40: error: expected ‘)’ before ‘;’ token
+       Heap *auxPQ = malloc(sizeof(Heap);
+                                        ^
+heap.c:58:5: error: expected ‘,’ or ‘;’ before ‘}’ token
+     }
+     ^
+heap.c:59:5: error: expected ‘}’ before ‘else’
+     else break;
+     ^~~~
+heap.c:49:13: error: unused variable ‘auxPQ’ [-Werror=unused-variable]
+       Heap *auxPQ = malloc(sizeof(Heap);
+             ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9819b28
