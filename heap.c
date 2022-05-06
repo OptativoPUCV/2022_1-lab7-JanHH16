@@ -34,7 +34,7 @@ void heap_pop(Heap* pq){
 
 Heap* createHeap(){
   Heap *monticulo = (Heap*) malloc(sizeof(Heap));
-  monticulo -> heapArray = malloc(sizeof(heapElem));
+  monticulo -> heapArray = malloc(3*sizeof(heapElem));
   
   
    return monticulo;
