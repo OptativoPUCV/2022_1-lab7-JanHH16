@@ -1,3 +1,4 @@
+//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
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -28,7 +29,33 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap* pq, void* data, int priority)
 {
-
+  //Comprobar tamaño arreglo
+  int indice;
+  indice = pq->capac;
+  if(pq->capac == (pq->size)-1)
+  {
+    pq = realloc(pq,(indice*2)+1);
+  }
+  //Insertar
+  indice = pq->size;
+  pq->heapArray[indice].data = data;
+  pq->heapArray[indice].priority = priority;
+  int padre;
+  Heap *auxPQ;
+  padre = (indice-1)/2;
+  while(padre!=0)
+  {
+    if(pq->heapArray[indice].priority > pq->heapArray[padre].priority)
+    {
+      auxPQ->heapArray[0].data = pq->heapArray[padre].data;
+      auxPQ->heapArray[0].priority = pq->heapArray[padre].priority;
+      pq->heapArray[padre].data = pq->heapArray[indice].data;
+      pq->heapArray[padre].priority = pq->heapArray[indice].priority;
+      pq->heapArray[indice].data = auxPQ->heapArray[0].data;
+      pq->heapArray[indice].priority = auxPQ->heapArray[0].priority;
+      padre=(padre-1)/2;
+    }
+  }
 }
 
 

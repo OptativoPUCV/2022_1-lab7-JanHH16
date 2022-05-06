@@ -69,3 +69,14 @@ Fri May  6 15:34:15 UTC 2022:
  tests:  2|2
 total_score: 20/70
 a841cb6
+Fri May  6 15:51:25 UTC 2022: 
+ heap.c | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+test.c: In function ‘heap_push’:
+heap.c:50:12: error: ‘auxPQ’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+       auxPQ->heapArray[0].data = pq->heapArray[padre].data;
+       ~~~~~^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e00ed06
