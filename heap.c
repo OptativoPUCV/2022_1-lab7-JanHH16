@@ -75,6 +75,6 @@ Heap* createHeap()
   Heap *monticulo = (Heap*) malloc(sizeof(Heap));
   monticulo -> heapArray = malloc(sizeof(heapElem));
   monticulo -> capac = 3;
-  monticulo->size = 0;
+  //monticulo->size = 0;
   return monticulo;
 }
