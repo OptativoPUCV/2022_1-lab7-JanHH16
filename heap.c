@@ -46,13 +46,15 @@ void heap_push(Heap* pq, void* data, int priority)
     padre = (indice-1)/2;
     if(pq->heapArray[indice].priority > pq->heapArray[padre].priority)
     {
-      Heap *auxPQ = malloc(sizeof(Heap));
-      auxPQ->heapArray[0].data = pq->heapArray[padre].data;
-      auxPQ->heapArray[0].priority = pq->heapArray[padre].priority;
+      Heap *monticulo = (Heap*) malloc(sizeof(Heap));
+      monticulo -> heapArray = malloc(3*sizeof(heapElem));
+      monticulo -> capac = 3;
+      monticulo->heapArray[0].data = pq->heapArray[padre].data;
+      monticulo->heapArray[0].priority = pq->heapArray[padre].priority;
       pq->heapArray[padre].data = pq->heapArray[indice].data;
       pq->heapArray[padre].priority = pq->heapArray[indice].priority;
-      pq->heapArray[indice].data = auxPQ->heapArray[0].data;
-      pq->heapArray[indice].priority = auxPQ->heapArray[0].priority;
+      pq->heapArray[indice].data = monticulo->heapArray[0].data;
+      pq->heapArray[indice].priority = monticulo->heapArray[0].priority;
       pq->size = pq->size +1;
       padre=(padre-1)/2;
     }
