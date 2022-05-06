@@ -37,13 +37,13 @@ void heap_push(Heap* pq, void* data, int priority)
     pq = realloc(pq,(indice*2)+1);
   }
   //Insertar
-  indice = pq->size;
-  pq->heapArray[indice].data = data;
-  pq->heapArray[indice].priority = priority;
-  int padre;
-  padre = (indice-1)/2;
-  //while(1)
-  //{
+  while(1)
+  {   
+    indice = pq->size;
+    pq->heapArray[indice].data = data;
+    pq->heapArray[indice].priority = priority;
+    int padre;
+    padre = (indice-1)/2;
     if(pq->heapArray[indice].priority > pq->heapArray[padre].priority)
     {
       Heap *auxPQ;
@@ -56,8 +56,8 @@ void heap_push(Heap* pq, void* data, int priority)
       pq->size = pq->size +1;
       padre=(padre-1)/2;
     }
-    //else break;
-  //}
+    else break;
+  }
 }
 
 
