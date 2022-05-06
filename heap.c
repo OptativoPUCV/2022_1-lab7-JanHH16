@@ -38,10 +38,10 @@ void heap_push(Heap* pq, void* data, int priority)
   }
   //Insertar
   indice = pq->size;
-    pq->heapArray[indice].data = data;
-    pq->heapArray[indice].priority = priority;
-    int padre;
-    padre = (indice-1)/2;
+   pq->heapArray[indice].data = data;
+  pq->heapArray[indice].priority = priority;
+  int padre;
+  padre = (indice-1)/2;
   while(1)
   {   
     
@@ -56,7 +56,7 @@ void heap_push(Heap* pq, void* data, int priority)
       pq->heapArray[padre].priority = pq->heapArray[indice].priority;
       pq->heapArray[indice].data = monticulo->heapArray[0].data;
       pq->heapArray[indice].priority = monticulo->heapArray[0].priority;
-      pq->size = pq->size + 1;
+      pq->size = indice + 1;
       padre=(padre-1)/2;
     }
     else break;
