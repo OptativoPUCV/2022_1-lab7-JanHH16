@@ -91,3 +91,14 @@ heap.c:50:12: error: ‘auxPQ’ may be used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 15e8418
+Fri May  6 15:53:30 UTC 2022: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+test.c: In function ‘heap_push’:
+heap.c:50:12: error: ‘auxPQ’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+       auxPQ->heapArray[0].data = pq->heapArray[padre].data;
+       ~~~~~^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+01acb8e
